@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Square Inc Demo</string>
+    <string name="no_data_available">No Data Available</string>
+    <string name="check_internet">Please check your internet connection</string>
+</resources>

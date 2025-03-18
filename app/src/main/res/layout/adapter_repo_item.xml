@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/margin_normal_xx"
+    android:layout_marginTop="@dimen/margin_normal_xx"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="@dimen/margin_small_x"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false"
+        android:layout_margin="@dimen/margin_small">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtRepoName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="4dp"
+            android:lines="1"
+            android:textColor="@color/title_dark_blue"
+            android:textSize="@dimen/text_size_medium_x"
+            app:layout_constraintEnd_toStartOf="@id/imgBookmark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="TanStack / query" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTotalStars"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:drawableStart="@drawable/ic_star"
+            android:drawablePadding="@dimen/margin_small"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal_xx"
+            app:layout_constraintEnd_toStartOf="@id/imgBookmark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtRepoName"
+            tools:text="26,265" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_bookmark" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

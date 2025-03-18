@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/layoutHeader"
+        layout="@layout/layout_header"
+        android:layout_width="0dp"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRepoName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small_xxx"
+        android:layout_marginTop="@dimen/margin_small_xxx"
+        android:lines="1"
+        android:textColor="@color/title_dark_blue"
+        android:textSize="@dimen/text_size_medium_xxxx"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/imgBookmark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+        tools:text="TanStack / query" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtTotalStars"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small_xxx"
+        android:layout_marginTop="@dimen/margin_small_xxx"
+        android:drawableStart="@drawable/ic_star"
+        android:drawablePadding="@dimen/margin_small"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_normal_xxxx"
+        app:layout_constraintEnd_toStartOf="@id/imgBookmark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtRepoName"
+        tools:text="26,265" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small_xxx"
+        android:layout_marginTop="@dimen/margin_small_xxx"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_normal_xxxx"
+        app:layout_constraintEnd_toStartOf="@id/imgBookmark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTotalStars"
+        tools:text="26,265" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgBookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_small"
+        android:src="@drawable/ic_bookmark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtRepoName" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+        tools:visibility="visible">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/layout_repo_detail_item_shimmer" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
